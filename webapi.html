@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web API Demo</title>
+    
+    <!--Insert bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!--Insert bootstrap icons--> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="Styles.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="s" type="submit">Search</button>
+            </form>
+            <!-- copy and pace serch box buttion to here
+            -->
+        </div>
+    </div>
+
+    <!--Navbar here-->
+    <div class="container-fluid" style="background-color: var(--navbar-color); height: 8vh;">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!--Brand logo and name-->
+                <a class="navbar-brand" href=":index.html"> <i class="bi bi-globe"></i> Navbar</a> 
+
+                
+                
+                <!--Sandwich icon -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!--search icon for mobile view-->
+                <button class="btn d-inline d-lg-none" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
+                    <span class="bi bi-search fs-2"></span>       
+                </button>
+
+
+
+                <!--Navbar links-->
+                <div class=" d-flex justify-content-center align-items-center collapse navbar-collapse"d-lg-flex justify-content-contaner id="navbarNav">
+                    <ul class="navbar-nav float end">
+                        <li class=" nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class=" nav-item">
+                            <a class="nav-link active" aria-current="page" href="forms.html">Forms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active bg-warning" aria-current="page" href="webapi.html">WebAPIs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="javascript.html">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Research.html">RESERCH</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--this serch icon only shown on large devices on the right hand side-->
+                <button class="btn d-none d-sm-none d-md-none d-lg-inline align-end" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" >
+                    <span class="bi bi-search fs-2"></span>
+                </button>
+            </div>
+        </nav>
+        
+    </div>
+
+
+<!--------------------------ACORDION SECTION-------------------------------------------->
+    <main style="min-height: 85vh;">
+        <div class="accordion row align-items-start p-2" id="accordionExample">
+            
+            <!--group 2 buttions in this devision-->
+            <div class="row col-12 col-lg-3">
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <h3>JSON Rules</h3>
+                    </button>
+                </h2>
+                <h2 class="accordion-header col-6 col-lg-12">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h4>REST API</h4>
+                    </button>
+                </h2>
+            </div>
+
+<!---------------------------------------------------JSON Rules section ------------------------------------------------------------------------------->
+            <!--Area 2 content here-->
+            <div class="col-12 col-lg-9">
+                <div class="accordion-item" style="background-color:var(--background-color2);">
+                    <div id="collapseOne" class="accordion-collapse collapse show border border-dark" data-bs-parent="#accordionExample">
+                       <div class="accordion-body" style="min-height: 50vh;">
+
+                            
+                                <h1>JSON Rules</h1>
+                                <p>Important rules that must be adheared to in order to create a valad JSON data:</p>
+                                <div class="row justify-content-center g-3">
+
+                                    <div class="col-12 col-md-6">
+                                        <div class="container-fluid border border-dark p-3" style="background-color:var(--box-color);">
+                                            <h1>Objects</h1>
+                                            <p>Enclosed in curly braces {} and contain comma-separated key/value pairs.</p> 
+                                            <pre><code>{ "name": "John", "age": 30 }</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="container-fluid border border-dark p-3" style="background-color:var(--box-color);">
+                                            <h1>Keys</h1>
+                                            <p>Must be strings enclosed in double quotes (e.g., "name": "John")..</p>
+                                            <pre><code>( "name": "John" )</code></pre>  
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="container-fluid border border-dark p-3" style="background-color:var(--box-color);">
+                                            <h1>Values: </h1>
+                                            <p> Can only be a string, number, object, array, boolean (true/false), or null. Functions and undefined are not allowed</p>
+                                            <pre><code>"name", "1", ( "names"), [1,2,3], "true"</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="container-fluid border border-dark p-3" style="background-color:var(--box-color);">
+                                            <h1>Arrays: </h1>
+                                            <p>Enclosed in square brackets [] and contain an ordered list of values.• Trailing Commas: Not allowed at the end of a list or object.</p>
+                                            <pre><code>[1, 2, 3]</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="container-fluid border border-dark p-3" style="background-color:var(--box-color);">
+                                            <h1> Trailing Commas:</h1>
+                                            <p>Not allowed at the end of a list or object.</p>
+                                            <pre><code>{ "name": "John", "age": 30, }</code></pre>  
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="container-fluid border border-dark p-3" style="background-color:var(--box-color);">
+                                            <h1>Strings use double quotes only</h1>
+                                            <p>no single quotes anywhere</p>
+                                            <pre><code>"name": "John"</code></pre>  
+                                        </div>
+                                    </div>
+                                    <div class="col-8 col-md-4  justify-content-center align-items-center d-lg-block border border-primary">
+                                        
+                                    </div>
+                                    <div class="col-4 col-md-4  justify-content-center align-items-center d-flex">
+                                        
+                                    </div>
+                                </div>
+                            
+                        </div> 
+                    </div>
+                </div>
+<!-------------------------------------------------------Reast API section--------------------------------------------------------->
+                <div class="accordion-item" style="background-color: var(--background-color2);">
+                    <div id="collapseTwo" class="accordion-collapse collapse show border border-dark" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="min-height: 50vh;">
+                            <!--Rest Api -->
+                            <h1>List of submitted data (on Forms page)</h1>
+                            <h3>Mobile Technology Form: Supabase Client and API</h3>
+                            <div id="mobiletechnologyform-data" style="background-color: var(--background-color)"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>     
+    
+    <script type="module">
+    //--------------------------------------------------------
+    // Supabase client setup: Setup the connection between client - server
+    //--------------------------------------------------------
+    //Import the superbace client from libeary
+    import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+    //My snapbaceURL
+    const supabaseUrl = 'https://gsdikywnoplgzwbqpofp.supabase.co';
+    //My snapbace API key
+    const supabaseKey = 'sb_publishable_bLqwP51ybMcdipss2Jzpwg_WVPDH-AG'
+    //create client instince
+    const supabase = createClient(supabaseUrl, supabaseKey);
+    //------------------------------------------------------------------------------------
+    //Using the Official Supabase Client
+    //------------------------------------------------------------------------------------
+    //The @supabase/supabase-js SDK provides a clean syntax that abstracts raw HTTP requests
+    // while routing everything through the /rest/v1/ PostgREST layer
+
+    //Async function to fetch data from the 'mobiletechnologyform' table in Supabase
+    async function getData() {
+        // Fetch data from the 'mobiletechnologyform' table and order by 'created_at' in descending order
+        const { data, error } = await supabase
+        .from('mobiletechnologyform')
+        .select('*')
+        .order('created_at', { ascending: false });
+        // Check for errors and return an empty array if there is an error
+        if (error) {
+            console.error('Error fetching data:', error);
+            alert('Error Fetching Data');
+            return [];
+        }
+            // Return the fetched data
+        return data;
+    } 
+    // Javascript Async Promise: handle the return Promise
+    getData().then(data => {
+        // Get the HTML element where the data will be displayed
+        const outputElement = document.getElementById('mobiletechnologyform-data');
+
+        //Debug: Display the fetched data as a formatted JSON string in the output element
+        console.log(JSON.stringify(data, null, 2));
+            //Loop through the data and display each record in a formatted way
+            data.forEach(record => {
+                // Create a new div element for each record
+                const recordElement = document.createElement('div');
+                //add background color to each record
+                recordElement.style.backgroundColor = '#f0f0f0';
+                recordElement.innerHTML = `
+                    <p>Firstname: ${record.fname}</p>
+                    <p>Lastname: ${record.lname}</p>
+                    <p>Gender: ${record.gender}</p>
+                    <P>town: ${record.town}</p>
+                    <p>phonetype: ${record.phonetype}</p>
+                    <p>studyUse: ${record.studyUse}</p>
+                `;
+                // Append the record element to the output element
+                outputElement.appendChild(recordElement);
+            });
+        });
+    </script>
+    <footer class="container-fluid" style="background-color: var(--navbar-color);">
+        <div class="row">
+            <!--Social media icons-->
+            <div class="col-12 col-md-4 justify-content-center align-items-center d-lg-block border border-primary">
+                <h3>
+                    <span class="bi bi-linkedin text-info m-1"></span>
+                    <span class="bi bi-facebook text-success m-1"></span>
+                    <span class="bi bi-twitter text-info m-1"></span>
+                    <span class="bi bi-youtube text-danger m-1"></span>
+                </h3>
+            </div>
+            <!--Author name section
+            
+            -->
+            <div class="col-8 col-md-4 d-flex justify-content-center align-items-center border border-primary">
+                <p class="fs-6">@Marshall lamp2itt(EIT)</p>
+            </div>
+            <!--prive pol section
+            
+            -->
+            <div class="col-4 col-md-4 d-flex justify-content-end align-items-center border border-primary">
+                <p class="fs-6">Privet polocy</p>
+            </div>
+        </div>
+    </footer>
+    <!--Insert bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
